@@ -15,10 +15,10 @@ import {takeEvery, put} from 'redux-saga/effects'
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('GET_PROJECTS', getProjects)
+    yield takeEvery('ADD_PROJECT', addProject);
 }
 
 function* getProjects(action) {
-    console.log('in index.js: getProjects');
     try {
         const serverResponse = yield axios.get('/api/projects');
         const nextAction = {type: 'SET_PROJECTS', 
@@ -27,6 +27,16 @@ function* getProjects(action) {
         yield put(nextAction);
     } catch(error) {
         console.log(`ERROR in getProjects saga: ${error}`);
+    }
+}
+
+function* addProject(action) {
+    try {
+        yield axios.post('api/projects');
+        const nextAction = {type: 'GET_PROJECTS'}
+        yield put(nextAction);
+    } catch(error) {
+        console.log(`ERROR in adding project: ${error}`);
     }
 }
 

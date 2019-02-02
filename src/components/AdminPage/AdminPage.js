@@ -13,22 +13,37 @@ class AdminPage extends Component {
     };
 
 
-    handleChange = (event) => {
+    handleNameChange = (event) => {
         console.log(event.target.value);
-        this.setState({
-            name: event.target.value,
-            description: event.target.value,
-            thumbnail: event.target.value,
-            website: event.target.value,
-            date_completed: event.target.value,
-            technology: event.target.value,
-        })
+        this.setState({name: event.target.value})
+    }
+    handleDescriptionChange = (event) => {
+        console.log(event.target.value);
+        this.setState({description: event.target.value});
+    }
+    handleThumbnailChange = (event) => {
+        console.log(event.target.value);
+        this.setState({thumbnail: event.target.value});
+    }
+    handleWebsiteChange = (event) => {
+        console.log(event.target.value);
+        this.setState({website: event.target.value});
+    }
+    handleDateChange = (event) => {
+        console.log(event.target.value);
+        this.setState({date_completed: event.target.value});
+    }
+    handleTechChange = (event) => {
+        console.log(event.target.value);
+        this.setState({technology: event.target.value});
     }
 
     handleClick = (event) => {
         event.preventDefault();
+        console.log('submit button clicked')
         const action = { type: 'ADD_PROJECT', payload: this.state};
-        this.props.dispatch(action);
+        console.log(action)
+        // this.props.dispatch(action);
     }
 
 
@@ -37,12 +52,12 @@ class AdminPage extends Component {
             <div>
                 <form>
                     <label>Add a new project</label><br />
-                    <input type='text' placeholder="name" onChange={this.handleChange} /><br />
-                    <input type='text' placeholder="description" onChange={this.handleChange} /><br />
-                    <input type='text' placeholder="thumbnail source" onChange={this.handleChange} /><br />
-                    <input type='text' placeholder="website" onChange={this.handleChange} /><br />
-                    <input placeholder="date completed (dd-mm-yyyy)" onChange={this.handleChange} /><br />
-                    <select onChange={this.handleChange}>
+                    <input id="name" type='text' placeholder="name" onChange={this.handleNameChange} /><br />
+                    <input id="description" type='text' placeholder="description" onChange={this.handleDescriptionChange} /><br />
+                    <input type='text' placeholder="thumbnail source" onChange={this.handleThumbnailChange} /><br />
+                    <input type='text' placeholder="website" onChange={this.handleWebsiteChange} /><br />
+                    <input placeholder="date completed (dd-mm-yyyy)" onChange={this.handleDateChange} /><br />
+                    <select onChange={this.handleTechChange}>
                         <option value="React">React</option>
                         <option value="jQuery">jQuery</option>
                         <option value="Node">Node</option>

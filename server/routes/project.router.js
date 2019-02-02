@@ -20,4 +20,25 @@ router.get('/', (req, res) => {
         });
 });
 
+rounter.post('/', (req, res) => {
+    //add the new project to the database
+
+    const newProject = req.body;
+    console.log(newProject);
+    const queryText = `INSERT INTO "projects" 
+                       ("name", "description", "thumbnail", "website", 
+                       "date_completed", "tag_id")
+                       VALUES ($1, $2, $3, $4, $5, $6);`;
+    pool.query(queryText, [newProject.name, newProject.description, 
+                           newProject.thumbnail, newProject.website, 
+                           newProject.date_completed, newProject.technology])
+    .then((response) => {
+        console.log(response);
+        res.sendStatus(201);
+    }).catch((error) => {
+        console.log(`error in posting new project: ${error}`);
+        res.sendStatus(500);
+    });
+})
+
 module.exports = router;
