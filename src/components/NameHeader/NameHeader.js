@@ -11,7 +11,7 @@ class NameHeader extends Component {
                 <Grid item xs={12}>
                     
                             <Grid container justify="center">
-                                <img src="./images/pic.jpg" />
+                                <img alt="me" src="./images/pic.jpg" />
                             </Grid>
                             <Grid container justify="center">
                                 <Typography>
