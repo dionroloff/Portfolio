@@ -5,7 +5,11 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
     // return the project rows from DB
-    const queryText = `SELECT * FROM projects;`;
+    const queryText = `SELECT projects.name, description, 
+                       thumbnail, website, github, 
+                       date_completed, tag_id, tags.name as technology
+                       FROM projects
+                       JOIN tags ON tags.id = projects.tag_id;`;
     pool.query(queryText)
         .then((sqlResult) => {
             console.log(sqlResult);

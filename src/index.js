@@ -20,7 +20,7 @@ function* rootSaga() {
 function* getProjects(action) {
     console.log('in index.js: getProjects');
     try {
-        const serverResponse = yield axios.get('/projects');
+        const serverResponse = yield axios.get('/api/projects');
         const nextAction = {type: 'SET_PROJECTS', 
                             payload: serverResponse.data
         }

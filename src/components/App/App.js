@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import NameHeader from './../NameHeader/NameHeader.js';
 import ProjectCard from './../ProjectCard/ProjectCard.js';
+import AdminPage from './../AdminPage/AdminPage.js';
 //Material UI
 import Divider from '@material-ui/core/Divider';
 
@@ -13,6 +15,15 @@ class App extends Component {
         <NameHeader />
         <Divider variant="middle" />
         <ProjectCard />
+
+
+        {/* Hashrouter */}
+        <Router>
+          <div>
+            <Link to='/my-admin'>Admin Page</Link>
+            <Route exact path={'/my-admin'} component={AdminPage}/>
+          </div>
+        </Router>
       </div>
     );
   }
