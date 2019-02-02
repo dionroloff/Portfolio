@@ -20,10 +20,13 @@ class App extends Component {
         {/* Hashrouter */}
         <Router>
           <div>
+            {/* Link to admin page */}
             <Link to='/my-admin'>Admin Page</Link>
+            {/* route to admin page */}
             <Route exact path={'/my-admin'} component={AdminPage}/>
           </div>
         </Router>
+        
       </div>
     );
   }
