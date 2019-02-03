@@ -12,16 +12,16 @@ class NameHeader extends Component {
                     
                             <Grid container justify="center">
                                 <img alt="me" src="./images/pic.jpg" />
-                            </Grid>
+                            
                             <Grid container justify="center">
                                 <Typography>
                                     <h1>Dion Roloff</h1>
                                 </Typography>
+                                <Grid container justify="center"></Grid>
                                 
-                                <Typography>
                                         <h4>Full Stack Software Engineer</h4>
-                                </Typography>
                                 
+                                </Grid>
                             </Grid>
                         
                 </Grid>

@@ -11,12 +11,12 @@ class ProjectItem extends Component {
             <CardContent>
                 <Typography>
                 {/* conditionally render a name, description, thumbnail, website, date complete and a tag */}
-                {this.props.project.name}
-                {this.props.project.description}
-                {this.props.project.thumbnail}
-                {this.props.project.website}
-                {this.props.project.date_completed}
-                {this.props.project.technology}
+                <img src={this.props.project.thumbnail} /><br/>
+                <p>Name: {this.props.project.name}</p><br/>
+                <p>Descripton: {this.props.project.description}</p><br/>
+                <a href={this.props.project.github}>Github</a><br/>
+                <a href={this.props.project.website}>Website</a><br/>
+                <p>Technology: {this.props.project.technology}</p>
                 </Typography>
             </CardContent>
         )

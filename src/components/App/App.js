@@ -17,7 +17,7 @@ class App extends Component {
         <ProjectCard />
 
 
-        {/* Hashrouter */}
+        
         <Router>
           <div>
             {/* Link to admin page */}
@@ -25,7 +25,7 @@ class App extends Component {
             {/* route to admin page */}
             <Route exact path={'/my-admin'} component={AdminPage}/>
           </div>
-        </Router>
+        </Router> 
         
       </div>
     );

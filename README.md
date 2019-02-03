@@ -70,11 +70,11 @@ Place thumbnail images in the `public/images` folder.
 - [x] Include a drop down menu with a list of tags
 - [x] Send data to the server and notify the user of success or failure
 - [x] List projects by name and allow the user to delete them
-- [ ] Include a button that navigates to the project page
+- [x] Include a button that navigates to the project page
 
 ### General Tasks
 
-- [ ] Commit your code frequently! You should have at 15+ commits on a project of this size. Use branches to help break down your features.
+- [x] Commit your code frequently! You should have at 15+ commits on a project of this size. Use branches to help break down your features.
 - [ ] Comment your code.
 - [ ] Update this README to include a description of the project in your own words.
 
@@ -94,6 +94,6 @@ Place thumbnail images in the `public/images` folder.
 ## Stretch Goals
 
 - [ ] Use the GitHub API to get user information to display at the top of the page
-- [ ] Improve styling on the page using Material UI
+- [x] Improve styling on the page using Material UI
 - [ ] Include a form on the admin page for adding new tags
 - [ ] Implement additional features of the GitHub API

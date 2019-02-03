@@ -74,7 +74,7 @@ class AdminPage extends Component {
                 <Router>
                     <div>
                         {/* Link to projects page */}
-                        <Link to='/'>Projects page</Link>
+                        <button><Link to='/'>Projects page</Link></button>
                         {/* route to projects page */}
                         <Route exact path={'/'} component={ProjectCard}/>
                     </div>
