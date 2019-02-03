@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AdminProjectRender from './../AdminProjectRender/AdminProjectRender.js';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import ProjectCard from '../ProjectCard/ProjectCard.js';
 
 class AdminPage extends Component {
 
@@ -68,8 +70,18 @@ class AdminPage extends Component {
                     <input type='submit' value='submit project' onClick={this.handleClick} />
                 </form>
                 
+                {/* Hashrouter */}
+                <Router>
+                    <div>
+                        {/* Link to projects page */}
+                        <Link to='/'>Projects page</Link>
+                        {/* route to projects page */}
+                        <Route exact path={'/'} component={ProjectCard}/>
+                    </div>
+                </Router>
+
                 <ul>
-                <h3>List of projects</h3>
+                    <h3>List of projects</h3>
                     {this.props.reduxState.projects.map((project) => {
                         return <AdminProjectRender project={project} id={project.id}/>
                     })}
