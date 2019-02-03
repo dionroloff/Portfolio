@@ -16,6 +16,7 @@ import {takeEvery, put} from 'redux-saga/effects'
 function* rootSaga() {
     yield takeEvery('GET_PROJECTS', getProjects)
     yield takeEvery('ADD_PROJECT', addProject);
+    yield takeEvery('DELETE_PROJECT', deleteProject);
 }
 
 function* getProjects(action) {
@@ -38,6 +39,17 @@ function* addProject(action) {
         yield put(nextAction);
     } catch(error) {
         console.log(`ERROR in adding project: ${error}`);
+    }
+}
+
+function* deleteProject(action) {
+    console.log('in deleteProject', action.payload);
+    try {
+        yield axios.delete(`api/projects/${action.payload.id}`, action.payload)
+        const nextAction = {type: 'GET_PROJECTS'};
+        yield put(nextAction);
+    } catch(error) {
+        console.log(`Error in deleting project: ${error}`);
     }
 }
 

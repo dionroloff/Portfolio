@@ -4,13 +4,18 @@ import { connect } from 'react-redux';
 class AdminProjectRender extends Component {
 
     handleDelete = (event) => {
-        console.log('in handleDelete');
+        console.log(this.props.project.id);
+        this.props.dispatch({
+            type: 'DELETE_PROJECT',
+            payload: this.props.project
+        })
+    
     }
 
     render() {
         return (
             <div>
-                <h3>List of projects</h3>
+                
                 <li>
                     {this.props.project.name}
                     <button onClick={this.handleDelete}>Delete project</button>

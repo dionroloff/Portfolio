@@ -67,13 +67,14 @@ class AdminPage extends Component {
                     </select>
                     <input type='submit' value='submit project' onClick={this.handleClick} />
                 </form>
-
+                
                 <ul>
+                <h3>List of projects</h3>
                     {this.props.reduxState.projects.map((project) => {
-                        return <AdminProjectRender project={project} key={project.id} />
+                        return <AdminProjectRender project={project} id={project.id}/>
                     })}
                 </ul>
-                
+
             </div>
         )
     }
