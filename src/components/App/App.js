@@ -17,7 +17,7 @@ class App extends Component {
         <ProjectCard />
 
 
-        
+        {/* Hashrouter, link to admin page */}
         <Router>
           <div>
             {/* Link to admin page */}
