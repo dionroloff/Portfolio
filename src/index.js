@@ -22,17 +22,18 @@ function* getProjects(action) {
     try {
         const serverResponse = yield axios.get('/api/projects');
         const nextAction = {type: 'SET_PROJECTS', 
-                            payload: serverResponse.data
-        }
+                            payload: serverResponse.data}
         yield put(nextAction);
+        
     } catch(error) {
         console.log(`ERROR in getProjects saga: ${error}`);
     }
 }
 
 function* addProject(action) {
+    console.log('in add project saga');
     try {
-        yield axios.post('api/projects');
+        yield axios.post('api/projects', action.payload);
         const nextAction = {type: 'GET_PROJECTS'}
         yield put(nextAction);
     } catch(error) {

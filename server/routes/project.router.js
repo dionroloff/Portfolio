@@ -20,11 +20,14 @@ router.get('/', (req, res) => {
         });
 });
 
-rounter.post('/', (req, res) => {
+router.post('/', (req, res) => {
     //add the new project to the database
+    console.log('in the post router');
 
     const newProject = req.body;
-    console.log(newProject);
+    console.log(`newProject name: ${newProject.name}, description: 
+    ${newProject.description} date: ${newProject.date_completed} 
+    technology: ${newProject.technology}`);
     const queryText = `INSERT INTO "projects" 
                        ("name", "description", "thumbnail", "website", 
                        "date_completed", "tag_id")
