@@ -7,6 +7,10 @@ import Card from '@material-ui/core/Card';
 
 class ProjectCard extends Component {
 
+    //When the document has loaded, a 
+    //dispatch is sent to index.js for the projects
+    //stored in the database
+
     componentDidMount = () => {
         this.getProjects();
     }

@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
 class NameHeader extends Component {
+    // The NameHeader will render my photo, title
     render() {
         return (
             <Grid container justify="center" className="header">

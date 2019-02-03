@@ -6,6 +6,9 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
 class ProjectItem extends Component {
+
+    //This component creates a material ui card for each rendered project
+    //returned from the database
     render() {
         return (
             <CardContent>

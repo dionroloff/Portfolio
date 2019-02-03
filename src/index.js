@@ -14,12 +14,15 @@ import {takeEvery, put} from 'redux-saga/effects'
 
 // Create the rootSaga generator function
 function* rootSaga() {
+    //first saga triggered by ProjectCard.js component
     yield takeEvery('GET_PROJECTS', getProjects)
     yield takeEvery('ADD_PROJECT', addProject);
     yield takeEvery('DELETE_PROJECT', deleteProject);
 }
 
 function* getProjects(action) {
+    //axios get request from the router and 
+    //then triggers the set projects reducer
     try {
         const serverResponse = yield axios.get('/api/projects');
         const nextAction = {type: 'SET_PROJECTS', 
@@ -32,6 +35,8 @@ function* getProjects(action) {
 }
 
 function* addProject(action) {
+    //This saga stores an axios request in the projects router
+    //and then gets the projects again.
     console.log('in add project saga');
     try {
         yield axios.post('api/projects', action.payload);
