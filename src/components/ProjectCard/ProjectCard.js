@@ -26,12 +26,12 @@ class ProjectCard extends Component {
     render() {
         return (
             <Grid container item xs={12}>
-            <Card>
+                <Card>
                     {this.props.reduxState.projects.map((project) => {
-                        return <ProjectItem project={project} key={project.id}/>
+                        return <ProjectItem project={project} key={project.id} />
                     })}
-            </Card>   
-            </Grid> 
+                </Card>
+            </Grid>
         )
     }
 }

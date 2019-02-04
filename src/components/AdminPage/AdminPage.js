@@ -9,7 +9,7 @@ class AdminPage extends Component {
     state = {
         name: '',
         description: '',
-        thumbnail: '',
+        // thumbnail: '',
         website: '',
         date_completed: '',
         technology: '',
@@ -24,10 +24,10 @@ class AdminPage extends Component {
         console.log(event.target.value);
         this.setState({ description: event.target.value });
     }
-    handleThumbnailChange = (event) => {
-        console.log(event.target.value);
-        this.setState({ thumbnail: event.target.value });
-    }
+    // handleThumbnailChange = (event) => {
+    //     console.log(event.target.value);
+    //     this.setState({ thumbnail: event.target.value });
+    // }
     handleWebsiteChange = (event) => {
         console.log(event.target.value);
         this.setState({ website: event.target.value });
@@ -56,7 +56,7 @@ class AdminPage extends Component {
                     <label>Add a new project</label><br />
                     <input type='text' placeholder="name" onChange={this.handleNameChange} /><br />
                     <input type='text' placeholder="description" onChange={this.handleDescriptionChange} /><br />
-                    <input type='text' placeholder="thumbnail source" onChange={this.handleThumbnailChange} /><br />
+                    {/* <input type='text' placeholder="thumbnail source" onChange={this.handleThumbnailChange} /><br /> */}
                     <input type='text' placeholder="website" onChange={this.handleWebsiteChange} /><br />
                     <input type="date" placeholder="date completed (dd-mm-yyyy)" onChange={this.handleDateChange} /><br />
                     <select onChange={this.handleTechChange}>
