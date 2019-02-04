@@ -3,6 +3,7 @@ import ProjectItem from './../ProjectItem/ProjectItem.js';
 import { connect } from 'react-redux';
 //Material UI
 import Card from '@material-ui/core/Card';
+import Grid from '@material-ui/core/Grid';
 
 
 class ProjectCard extends Component {
@@ -24,11 +25,13 @@ class ProjectCard extends Component {
 
     render() {
         return (
+            <Grid container item xs={12}>
             <Card>
                     {this.props.reduxState.projects.map((project) => {
                         return <ProjectItem project={project} key={project.id}/>
                     })}
-            </Card>    
+            </Card>   
+            </Grid> 
         )
     }
 }

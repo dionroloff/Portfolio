@@ -12,7 +12,7 @@ class NameHeader extends Component {
                 <Grid item xs={12}>
                     
                             <Grid container justify="center">
-                                <img alt="me" src="./images/pic.jpg" />
+                                <img id='me' alt="me" src="./images/pic.jpg" />
                             
                             <Grid container justify="center">
                                 <Typography>
@@ -20,7 +20,7 @@ class NameHeader extends Component {
                                 </Typography>
                                 <Grid container justify="center"></Grid>
                                 
-                                        <h4>Full Stack Software Engineer</h4>
+                                        <h4>My Portfolio</h4>
                                 
                                 </Grid>
                             </Grid>
